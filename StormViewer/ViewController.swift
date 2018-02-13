@@ -23,7 +23,7 @@ class ViewController: UITableViewController {
                pictures.append(item)
             }
         }
-        print(pictures)
+        title = "Storm Viewer"
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +41,11 @@ class ViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.selectedImage = pictures[indexPath.row]
+           navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 

@@ -12,15 +12,32 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var imageVIew: UIImageView!
     
+    var selectedImage: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let imageToLoad = selectedImage {
+            imageVIew.image = UIImage(named: imageToLoad)
+        }
+        
+        title = selectedImage
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.hidesBarsOnTap = false
     }
     
 
