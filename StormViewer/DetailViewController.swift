@@ -41,6 +41,9 @@ class DetailViewController: UIViewController {
     }
     
 
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return navigationController!.hidesBarsOnTap
+    }
     /*
     // MARK: - Navigation
 
