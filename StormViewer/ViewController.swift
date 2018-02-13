@@ -24,6 +24,8 @@ class ViewController: UITableViewController {
             }
         }
         title = "Storm Viewer"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 
     override func didReceiveMemoryWarning() {

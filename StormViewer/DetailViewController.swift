@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         }
         
         title = selectedImage
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func didReceiveMemoryWarning() {
