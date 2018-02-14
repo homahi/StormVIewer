@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var imageVIew: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var selectedImage: String?
     
@@ -18,11 +18,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         if let imageToLoad = selectedImage {
-            imageVIew.image = UIImage(named: imageToLoad)
+            imageView.image = UIImage(named: imageToLoad)
         }
         
         title = selectedImage
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +44,12 @@ class DetailViewController: UIViewController {
 
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return navigationController!.hidesBarsOnTap
+    }
+    
+    @objc func shareTapped() {
+        let vc = UIActivityViewController(activityItems: [imageView], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     /*
     // MARK: - Navigation

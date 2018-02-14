@@ -61,7 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="QsQ-l6-i5e"/>
                     </view>
                     <connections>
-                        <outlet property="imageVIew" destination="b7v-SC-uPg" id="LqR-Jr-2GZ"/>
+                        <outlet property="imageView" destination="b7v-SC-uPg" id="jNh-VP-KzP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsU-Sd-NdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
